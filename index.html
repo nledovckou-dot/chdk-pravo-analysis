@@ -67,6 +67,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 .timeline .year{font-size:13px;color:var(--gold);font-weight:700}
 .timeline .desc{font-size:14px;color:var(--muted)}
 .chart-container{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin:16px 0}
+.chart-container.compact{max-width:480px;margin-left:auto;margin-right:auto}
 .chart-title{font-size:14px;color:var(--muted);margin-bottom:12px;text-align:center}
 svg text{font-family:system-ui,-apple-system,sans-serif}
 .correction{background:rgba(61,184,106,.05);border:1px solid rgba(61,184,106,.2);border-radius:8px;padding:16px;margin:8px 0}
@@ -124,7 +125,7 @@ footer{padding:40px 0;text-align:center;color:var(--muted);font-size:13px}
 </div>
 
 <!-- SVG: Donut Chart - Market Share -->
-<div class="chart-container">
+<div class="chart-container compact">
 <div class="chart-title">Доли рынка СПС в России</div>
 <svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
 <g transform="translate(130,125)">
@@ -328,7 +329,7 @@ footer{padding:40px 0;text-align:center;color:var(--muted);font-size:13px}
 </div>
 
 <!-- SVG: Donut - Government contracts structure -->
-<div class="chart-container">
+<div class="chart-container compact">
 <div class="chart-title">Структура госзакупок по типам заказчиков (692 млн руб.)</div>
 <svg viewBox="0 0 500 280" xmlns="http://www.w3.org/2000/svg">
 <g transform="translate(140,140)">
