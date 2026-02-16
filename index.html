@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Бизнес-анализ ООО «ЧДК-ПРАВО» | КонсультантПлюс СПб</title>
+<style>
+:root{--bg:#0D0B0E;--card:#1A1620;--gold:#C9A44C;--green:#3DB86A;--red:#D44040;--blue:#4A8FE0;--text:#E8E6EA;--muted:#9A95A0;--border:#2E2838;--purple:#8B5CF6;--orange:#F59E0B}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,sans-serif;line-height:1.6;font-size:15px}
+a{color:var(--gold);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:100;background:rgba(13,11,14,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:10px 0}
+nav .container{display:flex;gap:6px;overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none}
+nav a{color:var(--muted);font-size:12px;white-space:nowrap;padding:4px 10px;border-radius:4px;transition:.2s}
+nav a:hover,nav a.active{color:var(--gold);background:rgba(201,164,76,.1);text-decoration:none}
+.hero{padding:80px 0 60px;text-align:center;border-bottom:1px solid var(--border)}
+.hero h1{font-size:2.2em;color:var(--gold);margin-bottom:8px}
+.hero .subtitle{font-size:1.1em;color:var(--muted);margin-bottom:24px}
+.hero .badges{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.badge{background:var(--card);border:1px solid var(--border);padding:6px 14px;border-radius:20px;font-size:13px;color:var(--muted)}
+.badge b{color:var(--text)}
+section{padding:48px 0;border-bottom:1px solid var(--border)}
+section h2{font-size:1.6em;color:var(--gold);margin-bottom:8px}
+section h3{font-size:1.2em;color:var(--text);margin:24px 0 12px}
+section .part-label{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:var(--muted);margin-bottom:4px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;margin:16px 0}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
+.metric{text-align:center;padding:20px}
+.metric .value{font-size:2em;font-weight:700;color:var(--gold)}
+.metric .label{font-size:13px;color:var(--muted);margin-top:4px}
+.metric .delta{font-size:12px;margin-top:2px}
+.delta.up{color:var(--green)}
+.delta.down{color:var(--red)}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+th{background:rgba(201,164,76,.1);color:var(--gold);text-align:left;padding:10px 12px;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:1px}
+td{padding:10px 12px;border-bottom:1px solid var(--border)}
+tr:hover td{background:rgba(255,255,255,.02)}
+.swot{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin:16px 0}
+.swot>div{padding:20px;border-radius:8px}
+.swot .s{background:rgba(61,184,106,.1);border:1px solid rgba(61,184,106,.3)}
+.swot .w{background:rgba(212,64,64,.1);border:1px solid rgba(212,64,64,.3)}
+.swot .o{background:rgba(74,143,224,.1);border:1px solid rgba(74,143,224,.3)}
+.swot .t{background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.3)}
+.swot h4{margin-bottom:8px;font-size:14px}
+.swot .s h4{color:var(--green)}.swot .w h4{color:var(--red)}.swot .o h4{color:var(--blue)}.swot .t h4{color:var(--orange)}
+.swot li{font-size:13px;margin:4px 0;list-style:none;padding-left:16px;position:relative}
+.swot li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%}
+.swot .s li::before{background:var(--green)}.swot .w li::before{background:var(--red)}.swot .o li::before{background:var(--blue)}.swot .t li::before{background:var(--orange)}
+.quote-card{background:var(--card);border-left:3px solid var(--gold);padding:20px;margin:12px 0;border-radius:0 8px 8px 0}
+.quote-card blockquote{font-style:italic;font-size:15px;margin-bottom:8px;color:var(--text)}
+.quote-card .author{font-size:13px;color:var(--gold);font-weight:600}
+.quote-card .meta{font-size:12px;color:var(--muted)}
+.founder-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center}
+.founder-card .name{font-size:16px;font-weight:700;color:var(--text);margin-bottom:4px}
+.founder-card .role{font-size:13px;color:var(--gold)}
+.founder-card .company{font-size:12px;color:var(--muted);margin-top:2px}
+.founder-card .share{font-size:20px;font-weight:700;color:var(--gold);margin-top:8px}
+.timeline{position:relative;padding-left:30px;margin:20px 0}
+.timeline::before{content:"";position:absolute;left:10px;top:0;bottom:0;width:2px;background:var(--border)}
+.timeline .event{position:relative;margin:20px 0}
+.timeline .event::before{content:"";position:absolute;left:-24px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--gold);border:2px solid var(--bg)}
+.timeline .year{font-size:13px;color:var(--gold);font-weight:700}
+.timeline .desc{font-size:14px;color:var(--muted)}
+.chart-container{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin:16px 0}
+.chart-title{font-size:14px;color:var(--muted);margin-bottom:12px;text-align:center}
+svg text{font-family:system-ui,-apple-system,sans-serif}
+.correction{background:rgba(61,184,106,.05);border:1px solid rgba(61,184,106,.2);border-radius:8px;padding:16px;margin:8px 0}
+.correction .label{font-size:12px;color:var(--green);font-weight:600;margin-bottom:4px}
+.alert{background:rgba(212,64,64,.08);border:1px solid rgba(212,64,64,.2);border-radius:8px;padding:12px 16px;margin:12px 0;font-size:14px}
+.alert b{color:var(--red)}
+.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600}
+.tag.green{background:rgba(61,184,106,.15);color:var(--green)}
+.tag.red{background:rgba(212,64,64,.15);color:var(--red)}
+.tag.blue{background:rgba(74,143,224,.15);color:var(--blue)}
+.tag.gold{background:rgba(201,164,76,.15);color:var(--gold)}
+footer{padding:40px 0;text-align:center;color:var(--muted);font-size:13px}
+@media(max-width:768px){.hero h1{font-size:1.5em}.grid2,.swot{grid-template-columns:1fr}.container{padding:0 16px}}
+</style>
+</head>
+<body>
+
+<nav><div class="container">
+<a href="#macro">I. Макро</a><a href="#meso">II. Мезо</a><a href="#micro">III. Микро</a><a href="#strategy">IV. Стратегия</a><a href="#appendix">V. Приложения</a><a href="#factcheck">VI. Фактчек</a><a href="#founders">VII. Фаундеры</a>
+</div></nav>
+
+<!-- HERO -->
+<div class="hero"><div class="container">
+<h1>ООО «ЧДК-ПРАВО»</h1>
+<div class="subtitle">Региональный информационный центр КонсультантПлюс в Санкт-Петербурге</div>
+<div class="badges">
+<span class="badge">ИНН <b>7842527584</b></span>
+<span class="badge">ОКВЭД <b>62.01</b> B2B_SERVICE</span>
+<span class="badge">Выручка <b>417.7 млн</b></span>
+<span class="badge">Маржа <b>13%</b></span>
+<span class="badge">Сотрудников <b>98</b></span>
+<span class="badge">С <b>1996</b> года</span>
+</div>
+</div></div>
+
+<!-- PART I: MACRO -->
+<section id="macro"><div class="container">
+<div class="part-label">Часть I</div>
+<h2>Макро: рынок СПС и LegalTech</h2>
+
+<div class="card">
+<h3>Executive Summary</h3>
+<p>ООО «ЧДК-ПРАВО» — один из крупнейших региональных информационных центров (РИЦ) сети КонсультантПлюс в Санкт-Петербурге. Компания входит в группу «Что делать» (4dk.ru), обслуживает бюджетные организации и коммерческие компании Петербурга и Ленобласти. Выручка стабильно растёт на 7-8% в год (CAGR 7.7%), чистая маржа увеличилась с 2.5% до 13% за 4 года. Якорный клиент — правительство Санкт-Петербурга (через УИТС). Главный конкурент — ИПЦ «Консультант+Аскон» с выручкой 698 млн.</p>
+<p style="margin-top:12px"><b>Цель:</b> выйти на 30-40 лидов/мес через Telegram и VK после падения эффективности Яндекс.Директ.</p>
+</div>
+
+<h3>Размер рынка</h3>
+<div class="grid3">
+<div class="card metric"><div class="value">~15 млрд</div><div class="label">LegalTech Россия (2025)</div></div>
+<div class="card metric"><div class="value">~5.5 млрд</div><div class="label">Группа КонсультантПлюс</div></div>
+<div class="card metric"><div class="value">~2.4 млрд</div><div class="label">ГАРАНТ</div></div>
+<div class="card metric"><div class="value">2.0 млрд</div><div class="label">Кодекс <span class="delta up">+22.4%</span></div></div>
+<div class="card metric"><div class="value">65-70%</div><div class="label">Доля К+ на рынке СПС (ВЦИОМ)</div></div>
+<div class="card metric"><div class="value">389K</div><div class="label">МСП в Петербурге</div></div>
+</div>
+
+<!-- SVG: Donut Chart - Market Share -->
+<div class="chart-container">
+<div class="chart-title">Доли рынка СПС в России</div>
+<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(130,125)">
+<circle r="90" fill="none" stroke="#C9A44C" stroke-width="30" stroke-dasharray="382 184" stroke-dashoffset="0"/>
+<circle r="90" fill="none" stroke="#4A8FE0" stroke-width="30" stroke-dasharray="141 425" stroke-dashoffset="-382"/>
+<circle r="90" fill="none" stroke="#3DB86A" stroke-width="30" stroke-dasharray="43 523" stroke-dashoffset="-523"/>
+<text x="0" y="5" text-anchor="middle" fill="#E8E6EA" font-size="18" font-weight="700">СПС</text>
+</g>
+<g transform="translate(280,60)">
+<rect x="0" y="0" width="12" height="12" rx="2" fill="#C9A44C"/><text x="18" y="11" fill="#E8E6EA" font-size="12">КонсультантПлюс ~67%</text>
+<rect x="0" y="22" width="12" height="12" rx="2" fill="#4A8FE0"/><text x="18" y="33" fill="#E8E6EA" font-size="12">ГАРАНТ ~25%</text>
+<rect x="0" y="44" width="12" height="12" rx="2" fill="#3DB86A"/><text x="18" y="55" fill="#E8E6EA" font-size="12">Кодекс и другие ~8%</text>
+</g>
+</svg>
+</div>
+
+<h3>Тренды отрасли</h3>
+<div class="grid2">
+<div class="card">
+<h4 style="color:var(--blue)">ИИ в юридической сфере</h4>
+<ul style="padding-left:20px;color:var(--muted)">
+<li>Применение ИИ юристами: <b>10-18% (2024) → 40-50% (2025)</b> — рост в 2.5 раза</li>
+<li>К+ AI-помощник запущен в декабре 2025</li>
+<li>ГАРАНТ: нейросеть «ИСКРА»</li>
+<li>Кодекс: «кАссист»</li>
+<li>Мировой LegalTech: $32.21B → $77.66B</li>
+</ul>
+</div>
+<div class="card">
+<h4 style="color:var(--green)">Цифровизация и импортозамещение</h4>
+<ul style="padding-left:20px;color:var(--muted)">
+<li>КонсультантПлюс в реестре отечественного ПО (запись №212)</li>
+<li>Рост LegalTech-вакансий: <b>+21%</b> в 2024-2025</li>
+<li>Централизация госзакупок через единых IT-заказчиков</li>
+<li>Ежегодная индексация стоимости СПС +5-10%</li>
+</ul>
+</div>
+</div>
+</div></section>
+
+<!-- PART II: MESO -->
+<section id="meso"><div class="container">
+<div class="part-label">Часть II</div>
+<h2>Мезо: конкурентная среда</h2>
+
+<!-- Perceptual Map -->
+<div class="chart-container">
+<div class="chart-title">Перцептуальная карта: Цена ↔ Функциональность</div>
+<svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="arrow" markerWidth="6" markerHeight="6" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#9A95A0"/></marker></defs>
+<line x1="50" y1="350" x2="570" y2="350" stroke="#2E2838" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="50" y1="350" x2="50" y2="30" stroke="#2E2838" stroke-width="1" marker-end="url(#arrow)"/>
+<text x="310" y="385" text-anchor="middle" fill="#9A95A0" font-size="12">Цена →</text>
+<text x="15" y="200" text-anchor="middle" fill="#9A95A0" font-size="12" transform="rotate(-90,15,200)">Функциональность →</text>
+<!-- K+ -->
+<circle cx="420" cy="80" r="18" fill="rgba(201,164,76,.3)" stroke="#C9A44C" stroke-width="2"/>
+<text x="420" y="85" text-anchor="middle" fill="#C9A44C" font-size="10" font-weight="700">К+</text>
+<text x="420" y="55" text-anchor="middle" fill="#9A95A0" font-size="9">309 млн док.</text>
+<!-- GARANT -->
+<circle cx="350" cy="100" r="15" fill="rgba(74,143,224,.3)" stroke="#4A8FE0" stroke-width="2"/>
+<text x="350" y="104" text-anchor="middle" fill="#4A8FE0" font-size="9" font-weight="700">ГАРАНТ</text>
+<!-- Kodeks -->
+<circle cx="300" cy="160" r="14" fill="rgba(61,184,106,.3)" stroke="#3DB86A" stroke-width="2"/>
+<text x="300" y="164" text-anchor="middle" fill="#3DB86A" font-size="9" font-weight="700">Кодекс</text>
+<!-- 1C:ITS -->
+<circle cx="200" cy="260" r="12" fill="rgba(139,92,246,.3)" stroke="#8B5CF6" stroke-width="2"/>
+<text x="200" y="264" text-anchor="middle" fill="#8B5CF6" font-size="9" font-weight="700">1С:ИТС</text>
+<!-- Free -->
+<circle cx="100" cy="310" r="10" fill="rgba(154,149,160,.3)" stroke="#9A95A0" stroke-width="2"/>
+<text x="100" y="313" text-anchor="middle" fill="#9A95A0" font-size="8">Бесплатные</text>
+</svg>
+</div>
+
+<h3>Конкурентная матрица</h3>
+<div style="overflow-x:auto">
+<table>
+<tr><th>Компания</th><th>Система</th><th>Выручка 2024</th><th>Прибыль</th><th>Маржа</th><th>Госконтракты</th><th>Сотрудники</th></tr>
+<tr style="background:rgba(201,164,76,.05)"><td><b>ЧДК-ПРАВО</b></td><td>К+</td><td>417.7 млн</td><td>54.3 млн</td><td><span class="tag green">13.0%</span></td><td>~950 шт / 692 млн</td><td>98</td></tr>
+<tr><td>ИПЦ «Консультант+Аскон»</td><td>К+</td><td>698.1 млн</td><td>71.6 млн</td><td>10.3%</td><td>776 шт</td><td>—</td></tr>
+<tr><td>АО «Кодекс»</td><td>Кодекс/Техэксперт</td><td>2 044.5 млн</td><td>164.9 млн</td><td>8.1%</td><td>174 шт / 2 553 млн</td><td>249</td></tr>
+<tr><td>СЗРЦ «Гарант Интернэшнл»</td><td>ГАРАНТ</td><td>54.7 млн</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>КомпасЛидера</td><td>К+</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Ваше Право КП</td><td>К+</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+</table>
+</div>
+
+<h3>Digital-аудит: сравнение</h3>
+<div style="overflow-x:auto">
+<table>
+<tr><th>Компания</th><th>VK</th><th>Telegram</th><th>YouTube</th><th>Дзен</th><th>Megasreda</th><th>CRM</th></tr>
+<tr style="background:rgba(201,164,76,.05)"><td><b>ЧДК-ПРАВО</b></td><td><span class="tag green">Есть</span></td><td>206 подп. <span class="tag red">неактивен</span></td><td><span class="tag red">Нет</span></td><td><span class="tag red">Нет</span></td><td>38K охват</td><td>Bitrix24</td></tr>
+<tr><td>Аскон</td><td><span class="tag green">Есть</span></td><td><span class="tag red">Нет</span></td><td><span class="tag red">Нет</span></td><td><span class="tag red">Нет</span></td><td>—</td><td>—</td></tr>
+<tr><td>КомпасЛидера</td><td>318 подп.</td><td><span class="tag red">Нет</span></td><td><span class="tag red">Нет</span></td><td><span class="tag green">Есть</span></td><td>18K</td><td>Bitrix24</td></tr>
+<tr><td>Кодекс</td><td><span class="tag green">Есть</span></td><td>каналы cntd.ru</td><td><span class="tag green">Есть</span></td><td><span class="tag red">Нет</span></td><td>—</td><td>—</td></tr>
+<tr><td>Гарант ИНТ</td><td>edu-профиль</td><td><span class="tag red">Нет</span></td><td><span class="tag red">Нет</span></td><td><span class="tag red">Нет</span></td><td>—</td><td>—</td></tr>
+<tr><td style="color:var(--muted)">Головной К+</td><td><span class="tag green">Есть</span></td><td><b>47K</b></td><td><span class="tag green">Есть</span></td><td><span class="tag green">Есть</span></td><td>—</td><td>—</td></tr>
+</table>
+</div>
+
+<!-- SVG: Grouped Bars - Revenue comparison -->
+<div class="chart-container">
+<div class="chart-title">Выручка конкурентов 2024 (млн руб.)</div>
+<svg viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(30,10)">
+<rect x="30" y="20" width="80" height="220" rx="4" fill="rgba(61,184,106,.6)"/>
+<text x="70" y="15" text-anchor="middle" fill="#3DB86A" font-size="12" font-weight="700">2 045</text>
+<text x="70" y="260" text-anchor="middle" fill="#9A95A0" font-size="10">Кодекс</text>
+<rect x="140" y="146" width="80" height="94" rx="4" fill="rgba(74,143,224,.6)"/>
+<text x="180" y="141" text-anchor="middle" fill="#4A8FE0" font-size="12" font-weight="700">698</text>
+<text x="180" y="260" text-anchor="middle" fill="#9A95A0" font-size="10">Аскон</text>
+<rect x="250" y="167" width="80" height="73" rx="4" fill="rgba(201,164,76,.8)"/>
+<text x="290" y="162" text-anchor="middle" fill="#C9A44C" font-size="12" font-weight="700">418</text>
+<text x="290" y="260" text-anchor="middle" fill="#C9A44C" font-size="10" font-weight="700">ЧДК-ПРАВО</text>
+<rect x="360" y="228" width="80" height="12" rx="4" fill="rgba(139,92,246,.6)"/>
+<text x="400" y="223" text-anchor="middle" fill="#8B5CF6" font-size="12" font-weight="700">54.7</text>
+<text x="400" y="260" text-anchor="middle" fill="#9A95A0" font-size="10">Гарант СПб</text>
+</g>
+</svg>
+</div>
+</div></section>
+
+<!-- PART III: MICRO -->
+<section id="micro"><div class="container">
+<div class="part-label">Часть III</div>
+<h2>Микро: ООО «ЧДК-ПРАВО»</h2>
+
+<div class="card">
+<h3 style="margin-top:0">Карточка компании</h3>
+<div class="grid2">
+<div>
+<p><b>Полное наименование:</b> ООО «ЧДК-ПРАВО»</p>
+<p><b>ИНН:</b> 7842527584 | <b>ОГРН:</b> 1147847321049</p>
+<p><b>ОКВЭД:</b> 62.01 (разработка ПО)</p>
+<p><b>ГД:</b> Третьяк Александр Иванович (99%)</p>
+<p><b>1%:</b> ООО «КП-ИС»</p>
+</div>
+<div>
+<p><b>Адрес:</b> 191167, СПб, наб. Обводного канала, 23, лит. Б</p>
+<p><b>IT-аккредитация:</b> №4980 от 20.04.2015</p>
+<p><b>Группа:</b> ГК «Что делать» (4dk.ru)</p>
+<p><b>Сайты:</b> spbcons.ru, chdk-pravo.ru, cons.spb4dk.ru</p>
+<p><b>CRM:</b> Bitrix24 (p.spb4dk.ru)</p>
+</div>
+</div>
+</div>
+
+<h3>Финансовый дашборд</h3>
+<div class="grid4">
+<div class="card metric"><div class="value">417.7</div><div class="label">Выручка (млн)</div><div class="delta up">+7.7% CAGR</div></div>
+<div class="card metric"><div class="value">54.3</div><div class="label">Чистая прибыль (млн)</div><div class="delta up">+14% г/г</div></div>
+<div class="card metric"><div class="value">33.8%</div><div class="label">ROE</div><div class="delta up">Отлично</div></div>
+<div class="card metric"><div class="value">0.26</div><div class="label">Debt Ratio</div><div class="delta up">Низкий долг</div></div>
+<div class="card metric"><div class="value">4.26</div><div class="label">Выручка/сотр. (млн)</div></div>
+<div class="card metric"><div class="value">98</div><div class="label">Сотрудников</div><div class="delta down">-5 г/г</div></div>
+<div class="card metric"><div class="value">35.1</div><div class="label">Налоги (млн)</div></div>
+<div class="card metric"><div class="value">~950</div><div class="label">Госконтрактов</div></div>
+</div>
+
+<!-- SVG: Bar Chart - Revenue by year -->
+<div class="chart-container">
+<div class="chart-title">Выручка и прибыль ЧДК-ПРАВО (2020-2024)</div>
+<svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(50,20)">
+<!-- Revenue bars -->
+<rect x="20" y="108" width="60" height="152" rx="4" fill="rgba(201,164,76,.7)"/>
+<text x="50" y="100" text-anchor="middle" fill="#C9A44C" font-size="11">310</text>
+<rect x="120" y="80" width="60" height="180" rx="4" fill="rgba(201,164,76,.7)"/>
+<text x="150" y="72" text-anchor="middle" fill="#C9A44C" font-size="11">344</text>
+<rect x="220" y="58" width="60" height="202" rx="4" fill="rgba(201,164,76,.7)"/>
+<text x="250" y="50" text-anchor="middle" fill="#C9A44C" font-size="11">370</text>
+<rect x="320" y="42" width="60" height="218" rx="4" fill="rgba(201,164,76,.7)"/>
+<text x="350" y="34" text-anchor="middle" fill="#C9A44C" font-size="11">390</text>
+<rect x="420" y="20" width="60" height="240" rx="4" fill="rgba(201,164,76,.9)"/>
+<text x="450" y="12" text-anchor="middle" fill="#C9A44C" font-size="11" font-weight="700">418</text>
+<!-- Profit line -->
+<polyline points="50,254 150,240 250,230 350,218 450,208" fill="none" stroke="#3DB86A" stroke-width="2.5"/>
+<circle cx="50" cy="254" r="4" fill="#3DB86A"/><text x="50" y="270" text-anchor="middle" fill="#3DB86A" font-size="9">7.8</text>
+<circle cx="150" cy="240" r="4" fill="#3DB86A"/><text x="150" y="270" text-anchor="middle" fill="#3DB86A" font-size="9">24.8</text>
+<circle cx="250" cy="230" r="4" fill="#3DB86A"/><text x="250" y="270" text-anchor="middle" fill="#3DB86A" font-size="9">35</text>
+<circle cx="350" cy="218" r="4" fill="#3DB86A"/><text x="350" y="270" text-anchor="middle" fill="#3DB86A" font-size="9">47.6</text>
+<circle cx="450" cy="208" r="4" fill="#3DB86A"/><text x="450" y="270" text-anchor="middle" fill="#3DB86A" font-size="9" font-weight="700">54.3</text>
+<!-- Year labels -->
+<text x="50" y="280" text-anchor="middle" fill="#9A95A0" font-size="11">2020</text>
+<text x="150" y="280" text-anchor="middle" fill="#9A95A0" font-size="11">2021</text>
+<text x="250" y="280" text-anchor="middle" fill="#9A95A0" font-size="11">2022</text>
+<text x="350" y="280" text-anchor="middle" fill="#9A95A0" font-size="11">2023</text>
+<text x="450" y="280" text-anchor="middle" fill="#9A95A0" font-size="11">2024</text>
+</g>
+<!-- Legend -->
+<rect x="460" y="20" width="12" height="12" rx="2" fill="rgba(201,164,76,.7)"/><text x="478" y="30" fill="#9A95A0" font-size="11">Выручка</text>
+<rect x="460" y="38" width="12" height="12" rx="2" fill="#3DB86A"/><text x="478" y="48" fill="#9A95A0" font-size="11">Прибыль</text>
+</svg>
+</div>
+
+<h3>Продуктовая линейка</h3>
+<div class="grid2">
+<div class="card"><h4 style="color:var(--gold)">Смарт-комплекты</h4><p style="color:var(--muted)">Бухгалтеру | Юристу | Бюджету | Универсальный | Здравоохранению</p><p style="margin-top:8px">Подвиды: Базовый → Оптимальный → Проф → Эксперт</p><p style="color:var(--gold);margin-top:8px">от 60 000 руб./год</p></div>
+<div class="card"><h4 style="color:var(--gold)">Варианты поставки</h4><p style="color:var(--muted)">Локальная (до 50 доступов) | Сетевая | Онлайн 24/7 | Флеш-версия (USB)</p><p style="margin-top:8px">Windows + Linux, мобильные приложения</p></div>
+<div class="card"><h4 style="color:var(--gold)">Сервисы</h4><ul style="color:var(--muted);padding-left:16px"><li>Линия консультаций (99% положительных)</li><li>Персональный менеджер</li><li>Семинары и вебинары</li><li>Проверка контрагентов</li><li>Конструктор договоров</li></ul></div>
+<div class="card"><h4 style="color:var(--gold)">Инфраструктура</h4><ul style="color:var(--muted);padding-left:16px"><li>3 сайта (spbcons.ru, chdk-pravo.ru, cons.spb4dk.ru)</li><li>Единая CRM Bitrix24</li><li>Call Tracker на всех сайтах</li><li>VK Retargeting</li><li>Marquiz-квиз</li></ul></div>
+</div>
+
+<!-- SVG: Donut - Government contracts structure -->
+<div class="chart-container">
+<div class="chart-title">Структура госзакупок по типам заказчиков (692 млн руб.)</div>
+<svg viewBox="0 0 500 280" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(140,140)">
+<circle r="80" fill="none" stroke="#C9A44C" stroke-width="25" stroke-dasharray="236 267" stroke-dashoffset="0"/>
+<circle r="80" fill="none" stroke="#4A8FE0" stroke-width="25" stroke-dasharray="75 428" stroke-dashoffset="-236"/>
+<circle r="80" fill="none" stroke="#3DB86A" stroke-width="25" stroke-dasharray="56 447" stroke-dashoffset="-311"/>
+<circle r="80" fill="none" stroke="#8B5CF6" stroke-width="25" stroke-dasharray="50 453" stroke-dashoffset="-367"/>
+<circle r="80" fill="none" stroke="#9A95A0" stroke-width="25" stroke-dasharray="86 417" stroke-dashoffset="-417"/>
+<text x="0" y="5" text-anchor="middle" fill="#E8E6EA" font-size="16" font-weight="700">692M</text>
+</g>
+<g transform="translate(270,50)">
+<rect width="12" height="12" rx="2" fill="#C9A44C"/><text x="18" y="11" fill="#E8E6EA" font-size="11">Город СПб (УИТС) — 47%</text>
+<rect y="20" width="12" height="12" rx="2" fill="#4A8FE0"/><text x="18" y="31" fill="#E8E6EA" font-size="11">Федеральные — 15%</text>
+<rect y="40" width="12" height="12" rx="2" fill="#3DB86A"/><text x="18" y="51" fill="#E8E6EA" font-size="11">Образование — 11%</text>
+<rect y="60" width="12" height="12" rx="2" fill="#8B5CF6"/><text x="18" y="71" fill="#E8E6EA" font-size="11">Силовые — 10%</text>
+<rect y="80" width="12" height="12" rx="2" fill="#9A95A0"/><text x="18" y="91" fill="#E8E6EA" font-size="11">Прочие бюджетные — 17%</text>
+</g>
+</svg>
+</div>
+
+<h3>ТОП-5 заказчиков</h3>
+<table>
+<tr><th>Заказчик</th><th>Сумма</th><th>Контрактов</th></tr>
+<tr><td>СПб ГКУ «УИТС» (все ИОГВ Петербурга)</td><td><b>265.2 млн</b></td><td>8</td></tr>
+<tr><td>Комитет по информатизации и связи СПб</td><td>61.5 млн</td><td>2</td></tr>
+<tr><td>ФГБУ «НМИЦ им. В.А. Алмазова»</td><td>15.7 млн</td><td>11</td></tr>
+<tr><td>ФКУ «ЦХИСО ГУ МВД России»</td><td>11.4 млн</td><td>5</td></tr>
+<tr><td>СПб ГБУ «ГЦСП «Контакт»</td><td>8.7 млн</td><td>5</td></tr>
+</table>
+<div class="alert"><b>Риск концентрации:</b> УИТС = 38% всех госконтрактов. Потеря этого клиента критична.</div>
+</div></section>
+
+<!-- PART IV: STRATEGY -->
+<section id="strategy"><div class="container">
+<div class="part-label">Часть IV</div>
+<h2>Стратегия</h2>
+
+<h3>SWOT-анализ</h3>
+<div class="swot">
+<div class="s"><h4>S — Сильные стороны</h4><ul>
+<li>Часть ГК «Что делать» — федеральная поддержка</li>
+<li>Чистая маржа 13% (лучше Аскона 10.3%)</li>
+<li>~950 госконтрактов — обширная база</li>
+<li>Якорный клиент — правительство СПб</li>
+<li>IT-аккредитация с 2015</li>
+<li>Единая CRM Bitrix24 на всех сайтах</li>
+<li>Marquiz-квиз + VK Retargeting</li>
+<li>Линия консультаций (99% положительных)</li>
+</ul></div>
+<div class="w"><h4>W — Слабые стороны</h4><ul>
+<li>Выручка в 1.7x меньше Аскона (418 vs 698 млн)</li>
+<li>Telegram-канал мёртв (206 подп., пост от апр 2024)</li>
+<li>Нет YouTube, Instagram, Яндекс.Дзен</li>
+<li>Google Analytics UA — устаревший (мигрировать на GA4)</li>
+<li>ЗП продажников 70-150K vs 120-300K у конкурентов</li>
+<li>Трафик сайтов ниже порога SimilarWeb (&lt;5K/мес)</li>
+<li>Яндекс.Директ перестал давать результат</li>
+<li>Лендинг «не закрывает боли целевого сегмента» (Espace)</li>
+</ul></div>
+<div class="o"><h4>O — Возможности</h4><ul>
+<li>Telegram-маркетинг (головной К+ — 47K подписчиков)</li>
+<li>VK-таргетинг (ретаргетинг уже подключен)</li>
+<li>389K МСП в Петербурге — огромная TAM</li>
+<li>AI-помощник К+ (дек 2025) — новый аргумент продаж</li>
+<li>Контур.Норматив закрыт — часть клиентов ищут замену</li>
+<li>Рост digital бюджетов в B2B</li>
+<li>Яндекс.Дзен — конкурент КомпасЛидера уже там</li>
+</ul></div>
+<div class="t"><h4>T — Угрозы</h4><ul>
+<li>ГАРАНТ: нейросеть ИСКРА + LegalTech-экосистема</li>
+<li>1С:ИТС включает базу ГАРАНТ (каннибализация)</li>
+<li>Аскон — «10 лет лучшие показатели», 26K+ клиентов</li>
+<li>Хронический дефицит продажников</li>
+<li>Бюджетная консолидация — укрупнение контрактов</li>
+<li>Переход клиентов на бесплатные ИИ-инструменты</li>
+</ul></div>
+</div>
+
+<h3>Путь к 30-40 лидам/мес</h3>
+<div class="card">
+<h4 style="color:var(--gold)">Анализ КП от Espace Agency</h4>
+<div class="grid3" style="margin-top:12px">
+<div class="metric"><div class="value" style="font-size:1.3em">200-300K</div><div class="label">Бюджет Яндекс.Директ/мес</div></div>
+<div class="metric"><div class="value" style="font-size:1.3em">12-34</div><div class="label">Прогноз лидов/мес</div></div>
+<div class="metric"><div class="value" style="font-size:1.3em">~1 155₽</div><div class="label">CPL (стоимость лида)</div></div>
+<div class="metric"><div class="value" style="font-size:1.3em">20 000₽</div><div class="label">KPI: стоимость сделки</div></div>
+<div class="metric"><div class="value" style="font-size:1.3em">5-15</div><div class="label">Прогноз продаж/мес</div></div>
+</div>
+<div class="alert" style="margin-top:16px"><b>Замечание Espace:</b> «Лендинг не закрывает боли ни одного целевого сегмента» — нужна переработка посадочных страниц.</div>
+</div>
+
+<h3>Рекомендации по каналам</h3>
+<div class="grid2">
+<div class="card">
+<h4 style="color:var(--blue)">Telegram</h4>
+<ul style="color:var(--muted);padding-left:16px">
+<li><b>Цель:</b> 1000+ подписчиков за 6 мес</li>
+<li>Реанимация @chdk_pravo: 3-5 постов/неделю</li>
+<li>Контент: обзоры изменений, чек-листы, дайджесты</li>
+<li>Размещения в юридических TG-каналах СПб</li>
+<li>Lead magnet: бесплатный пробный доступ 2 дня</li>
+<li>Бюджет: 50-80K руб/мес</li>
+<li><b>Прогноз:</b> 10-15 лидов/мес через 3-4 мес</li>
+</ul>
+</div>
+<div class="card">
+<h4 style="color:var(--purple)">VK</h4>
+<ul style="color:var(--muted);padding-left:16px">
+<li><b>Цель:</b> 20-25 лидов/мес через таргет</li>
+<li>VK Retargeting уже подключен — усилить</li>
+<li>Look-alike аудитории на базе CRM</li>
+<li>Контент: экспертные статьи + видео-разборы</li>
+<li>Квиз-воронка через Marquiz (уже есть)</li>
+<li>Бюджет: 100-150K руб/мес</li>
+<li><b>Прогноз:</b> 15-25 лидов/мес</li>
+</ul>
+</div>
+</div>
+
+<h3>Бюджетирование (6 мес)</h3>
+<table>
+<tr><th>Канал</th><th>Бюджет/мес</th><th>Прогноз лидов/мес</th><th>CPL</th></tr>
+<tr><td>Telegram (контент + посевы)</td><td>50-80K</td><td>10-15</td><td>~5 000₽</td></tr>
+<tr><td>VK (таргет + ретаргетинг)</td><td>100-150K</td><td>15-25</td><td>~6 000₽</td></tr>
+<tr><td>Яндекс.Дзен (контент-маркетинг)</td><td>20-30K</td><td>3-5</td><td>~6 000₽</td></tr>
+<tr><td>Переработка лендингов</td><td>100K (разово)</td><td>—</td><td>—</td></tr>
+<tr style="background:rgba(201,164,76,.05)"><td><b>ИТОГО</b></td><td><b>170-260K/мес</b></td><td><b>28-45</b></td><td><b>~5 500₽</b></td></tr>
+</table>
+</div></section>
+
+<!-- PART V: APPENDIX -->
+<section id="appendix"><div class="container">
+<div class="part-label">Часть V</div>
+<h2>Приложения</h2>
+
+<h3>Справка по терминам</h3>
+<div class="grid2">
+<div class="card"><b>СПС</b> — Справочная правовая система. Программный продукт для доступа к актуальному законодательству, судебной практике и аналитике.</div>
+<div class="card"><b>РИЦ</b> — Региональный информационный центр. Авторизованный представитель КонсультантПлюс, осуществляющий продажу и обслуживание СПС в регионе.</div>
+<div class="card"><b>CAGR</b> — Совокупный среднегодовой темп роста. Формула: (V_end/V_start)^(1/n) - 1</div>
+<div class="card"><b>ROE</b> — Рентабельность собственного капитала. Формула: Чистая прибыль / Собственный капитал × 100%</div>
+<div class="card"><b>CPL</b> — Cost Per Lead, стоимость привлечения одного потенциального клиента.</div>
+<div class="card"><b>LegalTech</b> — Технологии в юридической сфере: ИИ-ассистенты, автоматизация документооборота, правовой анализ.</div>
+<div class="card"><b>44-ФЗ</b> — Федеральный закон «О контрактной системе в сфере закупок». Регулирует госзакупки.</div>
+<div class="card"><b>УИТС</b> — Управление информационных технологий и связи СПб. Единый IT-заказчик правительства города.</div>
+</div>
+
+<h3>Источники данных</h3>
+<div class="card" style="font-size:13px;color:var(--muted)">
+<p><b>Финансы:</b> ФНС (api-fns.ru), Rusprofile, Checko.ru, Audit-it.ru — ground truth</p>
+<p><b>Госзакупки:</b> zakupki.gov.ru, Контур.Закупки, zakupki360.ru, bicotender.ru</p>
+<p><b>Конкуренты:</b> Rusprofile, DataNewton, Synapsenet, ascon-spb.ru, kodeks.ru, garant.spb.ru</p>
+<p><b>Digital:</b> SimilarWeb, Megasreda.ru, Telemetr.me, ВКонтакте, анализ кода сайтов</p>
+<p><b>Рынок:</b> ВЦИОМ, РБК, Право.ру, ПравоТех, TAdviser, Селдон Новости</p>
+<p><b>HR:</b> HH.ru, DreamJob, ANCOR</p>
+<p><b>Цитаты:</b> Право.ру, Журнал «Компания» (ko.ru), RB.RU, «Деловой мир», РБК Тренды, Гарант.ру</p>
+</div>
+</div></section>
+
+<!-- PART VI: FACTCHECK -->
+<section id="factcheck"><div class="container">
+<div class="part-label">Часть VI</div>
+<h2>Фактчек</h2>
+
+<h3>Верификация ключевых фактов</h3>
+<div style="overflow-x:auto">
+<table>
+<tr><th>Факт</th><th>Значение</th><th>Источник 1</th><th>Источник 2</th><th>Статус</th></tr>
+<tr><td>Выручка 2024</td><td>417.7 млн</td><td>ФНС (api-fns.ru)</td><td>Rusprofile</td><td><span class="tag green">Подтверждён</span></td></tr>
+<tr><td>Чистая прибыль 2024</td><td>54.3 млн</td><td>ФНС</td><td>Checko.ru</td><td><span class="tag green">Подтверждён</span></td></tr>
+<tr><td>Сотрудников</td><td>98</td><td>ФНС</td><td>Rusprofile</td><td><span class="tag green">Подтверждён</span></td></tr>
+<tr><td>Аскон выручка</td><td>698.1 млн</td><td>DataNewton</td><td>Rusprofile</td><td><span class="tag green">Подтверждён</span></td></tr>
+<tr><td>Кодекс выручка</td><td>2 044.5 млн</td><td>Audit-it.ru</td><td>Synapsenet</td><td><span class="tag green">Подтверждён</span></td></tr>
+<tr><td>Госконтракты</td><td>~950 / 692 млн</td><td>Checko.ru</td><td>vbankcenter.ru</td><td><span class="tag green">Подтверждён</span></td></tr>
+<tr><td>ИНН ЧДК-ПРАВО</td><td>7842527584</td><td>ФНС</td><td>Rusprofile</td><td><span class="tag green">Подтверждён</span></td></tr>
+<tr><td>К+ доля рынка</td><td>65-70%</td><td>ВЦИОМ</td><td>buhgalteria.ru</td><td><span class="tag green">Подтверждён</span></td></tr>
+<tr><td>TG @chdk_pravo</td><td>206 подп.</td><td>Telemetr.me</td><td>Megasreda</td><td><span class="tag green">Подтверждён</span></td></tr>
+<tr><td>TG @chdk_pravo активность</td><td>Последний пост апр 2024</td><td>Telegram</td><td>Megasreda</td><td><span class="tag red">Неактивен</span></td></tr>
+</table>
+</div>
+
+<div class="correction">
+<div class="label">Уточнение: Аскон vs АСКОН (CAD)</div>
+<p style="font-size:13px">VK-группа vk.com/ascon_ru (6389 подп.) принадлежит компании АСКОН — производителю КОМПАС-3D (CAD-софт), а НЕ ИПЦ «Консультант+Аскон». Это разные компании. У ИПЦ «Консультант+Аскон» VK: vk.com/konsultantplusascon.</p>
+</div>
+
+<div class="correction">
+<div class="label">Уточнение: Google Analytics</div>
+<p style="font-size:13px">На всех 3 сайтах ЧДК-ПРАВО используется устаревший формат Google Analytics (UA-88446330-*). Google прекратил обработку данных UA в июле 2024. Необходима миграция на GA4.</p>
+</div>
+</div></section>
+
+<!-- PART VII: FOUNDERS & OPINIONS -->
+<section id="founders"><div class="container">
+<div class="part-label">Часть VII</div>
+<h2>Фаундеры и мнения</h2>
+
+<h3>Карта владельцев</h3>
+<div class="grid3">
+<div class="founder-card">
+<div class="name">Третьяк А.И.</div>
+<div class="role">Генеральный директор</div>
+<div class="company">ООО «ЧДК-ПРАВО»</div>
+<div class="share">99%</div>
+</div>
+<div class="founder-card">
+<div class="name">Голикова И.А.</div>
+<div class="role">Владелец</div>
+<div class="company">ИПЦ «Консультант+Аскон»</div>
+<div class="share">97%</div>
+</div>
+<div class="founder-card">
+<div class="name">Новиков Д.Б.</div>
+<div class="role">Генеральный директор</div>
+<div class="company">КонсультантПлюс (головная)</div>
+<div class="share">Основатель</div>
+</div>
+<div class="founder-card">
+<div class="name">Першеев Д.В.</div>
+<div class="role">Президент</div>
+<div class="company">ГАРАНТ</div>
+<div class="share">Основатель</div>
+</div>
+<div class="founder-card">
+<div class="name">Тихомиров С.Г.</div>
+<div class="role">Основатель</div>
+<div class="company">АО «Кодекс»</div>
+<div class="share">Основатель</div>
+</div>
+<div class="founder-card">
+<div class="name">Хаит Ю.Б.</div>
+<div class="role">Управление</div>
+<div class="company">СЗРЦ «Гарант Интернэшнл»</div>
+<div class="share">—</div>
+</div>
+</div>
+
+<h3>Мнения лидеров отрасли</h3>
+
+<div class="quote-card">
+<blockquote>«Недостаточно быть просто информационным банком — пусть и самым полным. Курс на то, чтобы стать серьёзным аналитическим инструментом.»</blockquote>
+<div class="author">Дмитрий Новиков, генеральный директор КонсультантПлюс</div>
+<div class="meta">2009 | Журнал «Компания» (ko.ru)</div>
+</div>
+
+<div class="quote-card">
+<blockquote>«Наша доля вдвое превысила долю ближайшего конкурента. В этот момент мы позволили себе расслабиться и чуть-чуть снизили требования к себе.»</blockquote>
+<div class="author">Дмитрий Новиков, генеральный директор КонсультантПлюс</div>
+<div class="meta">2007 | RB.RU</div>
+</div>
+
+<div class="quote-card">
+<blockquote>«Сначала нас не замечали в принципе. Потом мы кому-то мешали. И только спустя годы возобладало понимание, что мы занимаемся важным государственным делом.»</blockquote>
+<div class="author">Дмитрий Першеев, президент ГАРАНТ</div>
+<div class="meta">2011 | Журнал «Деловой мир» (delovoymir.biz)</div>
+</div>
+
+<div class="quote-card">
+<blockquote>«Опора на десятки тысяч пользователей, каждый из которых платит небольшие деньги, со временем становится своего рода гарантией стабильности.»</blockquote>
+<div class="author">Дмитрий Першеев, президент ГАРАНТ</div>
+<div class="meta">2011 | Журнал «Деловой мир» (delovoymir.biz)</div>
+</div>
+
+<div class="quote-card">
+<blockquote>«Нашим специалистам необходимо быть и айтишниками, и правоведами, и продажниками.»</blockquote>
+<div class="author">Дмитрий Першеев, президент ГАРАНТ</div>
+<div class="meta">2011 | Журнал «Деловой мир» (delovoymir.biz)</div>
+</div>
+
+<div class="quote-card">
+<blockquote>«10-18% руководителей юрфункций использовали ИИ в 2024, а в 2025 — уже 40-50%. Рост в 2.5 раза за один год. Для консервативной индустрии права это колоссальные темпы.»</blockquote>
+<div class="author">Кирилл Кондратенко, зам. гендиректора ПравоТех</div>
+<div class="meta">Декабрь 2025 | pravo.tech</div>
+</div>
+
+<div class="quote-card">
+<blockquote>«Мы на пороге большой революции, когда контракты в привычном виде перестанут существовать и превратятся в формулу или набор условий.»</blockquote>
+<div class="author">Кирилл Кондратенко, зам. гендиректора ПравоТех</div>
+<div class="meta">Январь 2026 | pravo.tech</div>
+</div>
+
+<div class="quote-card">
+<blockquote>«Юрист будущего будет архитектором доверия, стратегом по рискам, этическим модератором и культурным переводчиком.»</blockquote>
+<div class="author">Алексей Пелевин, основатель ПравоТех</div>
+<div class="meta">Октябрь 2025 | Право.ру</div>
+</div>
+
+<div class="quote-card">
+<blockquote>«Искусственный интеллект будет задействован для организационных, вспомогательных и контрольных функций. Судейский разум не будет заменён.»</blockquote>
+<div class="author">Виктор Момотов, председатель Совета судей РФ</div>
+<div class="meta">Май 2025 | Гарант.ру</div>
+</div>
+
+<div class="quote-card">
+<blockquote>«ИИ для создания выжимки по договорам и ЛНА — значительно упрощает работу с большими объёмами информации.»</blockquote>
+<div class="author">Екатерина Зеленова, блок правовых вопросов «Евраз»</div>
+<div class="meta">Апрель 2025 | Право.ру</div>
+</div>
+
+<div class="quote-card">
+<blockquote>«Эффективность наших сотрудников возросла на 20-40% при практически нулевых затратах.»</blockquote>
+<div class="author">Софья Смирнова, директор по цифровой трансформации O2 Consulting</div>
+<div class="meta">Декабрь 2025 | Право.ру-300</div>
+</div>
+
+<div class="quote-card">
+<blockquote>«Игнорировать ИИ в юридической профессии — значит добровольно выходить из гонки.»</blockquote>
+<div class="author">Сергей Алехин, партнер юрфирмы ELWI</div>
+<div class="meta">Декабрь 2025 | Право.ру-300</div>
+</div>
+
+<div class="quote-card">
+<blockquote>«Legal AI — это инструмент, не более. Мы не можем себе позволить передавать чувствительную информацию в чёрный ящик.»</blockquote>
+<div class="author">Мария Трошихина, управляющий партнёр «Право просто»</div>
+<div class="meta">Июль 2025 | РБК Тренды</div>
+</div>
+
+<div class="quote-card">
+<blockquote>«Роль юриста сместится: он перестанет искать и начнёт проверять и принимать решения.»</blockquote>
+<div class="author">Дмитрий Ткачев, основатель «Закон и Дело»</div>
+<div class="meta">Декабрь 2025 | Право.ру-300</div>
+</div>
+
+<div class="quote-card">
+<blockquote>«Первая проблема, которую нужно преодолеть, — это проблема доверия.»</blockquote>
+<div class="author">Евгений Антаков, управляющий директор Сбербанка</div>
+<div class="meta">Октябрь 2025 | Право.ру</div>
+</div>
+
+<h3>Timeline отрасли</h3>
+<div class="timeline">
+<div class="event"><div class="year">1990</div><div class="desc">Основана компания «Гарант» — первая коммерческая СПС в России</div></div>
+<div class="event"><div class="year">1992</div><div class="desc">Основана компания «КонсультантПлюс» (Дмитрий Новиков)</div></div>
+<div class="event"><div class="year">1991</div><div class="desc">Основан НТЦ «Кодекс» в Санкт-Петербурге (Тихомиров С.Г.)</div></div>
+<div class="event"><div class="year">1994</div><div class="desc">ИПЦ «Консультант+Аскон» начинает работу в СПб</div></div>
+<div class="event"><div class="year">1996</div><div class="desc">ЧДК-ПРАВО начинает работу как РИЦ КонсультантПлюс в Петербурге</div></div>
+<div class="event"><div class="year">2008</div><div class="desc">К+ запускает «Путеводители» и «Энциклопедии спорных ситуаций»</div></div>
+<div class="event"><div class="year">2014</div><div class="desc">ООО «ЧДК-ПРАВО» зарегистрировано как юрлицо (ИНН 7842527584)</div></div>
+<div class="event"><div class="year">2015</div><div class="desc">ЧДК-ПРАВО получает IT-аккредитацию №4980</div></div>
+<div class="event"><div class="year">2024</div><div class="desc">Контур.Норматив закрыт как отдельный продукт</div></div>
+<div class="event"><div class="year">2025</div><div class="desc">К+ запускает AI-помощника. ГАРАНТ — нейросеть «ИСКРА». Применение ИИ юристами: 40-50%</div></div>
+<div class="event"><div class="year">2026</div><div class="desc">ЧДК-ПРАВО: выручка 418 млн, маржа 13%, ищет новые каналы лидогенерации</div></div>
+</div>
+
+</div></section>
+
+<footer>
+<div class="container">
+<p>Бизнес-анализ ООО «ЧДК-ПРАВО» | Февраль 2026</p>
+<p>Данные: ФНС, Rusprofile, zakupki.gov.ru, Право.ру, ВЦИОМ | Тип: B2B_SERVICE</p>
+</div>
+</footer>
+
+<script>
+// Smooth scroll + active nav
+document.querySelectorAll('nav a').forEach(a=>{
+a.addEventListener('click',e=>{
+e.preventDefault();
+document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+});
+});
+const sections=document.querySelectorAll('section');
+const navLinks=document.querySelectorAll('nav a');
+window.addEventListener('scroll',()=>{
+let c='';
+sections.forEach(s=>{if(scrollY>=s.offsetTop-100)c=s.id});
+navLinks.forEach(l=>{l.classList.toggle('active',l.getAttribute('href')==='#'+c)});
+});
+</script>
+</body>
+</html>
