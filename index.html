@@ -116,13 +116,14 @@ footer{padding:40px 0;text-align:center;color:var(--muted);font-size:13px}
 
 <h3>Размер рынка</h3>
 <div class="grid3">
-<div class="card metric"><div class="value">~15 млрд</div><div class="label">LegalTech Россия (2025)</div></div>
-<div class="card metric"><div class="value">~5.5 млрд</div><div class="label">Группа КонсультантПлюс</div></div>
-<div class="card metric"><div class="value">~2.4 млрд</div><div class="label">ГАРАНТ</div></div>
-<div class="card metric"><div class="value">2.0 млрд</div><div class="label">Кодекс <span class="delta up">+22.4%</span></div></div>
+<div class="card metric"><div class="value">~15 млрд</div><div class="label">LegalTech Россия (оценка РБК, дек. 2025)*</div></div>
+<div class="card metric"><div class="value">~5.5 млрд</div><div class="label">Группа К+ (вся сеть РФ)</div></div>
+<div class="card metric"><div class="value">~2.4 млрд</div><div class="label">ГАРАНТ (вся РФ)</div></div>
+<div class="card metric"><div class="value">2.0 млрд</div><div class="label">Кодекс (вся РФ) <span class="delta up">+22.4%</span></div></div>
 <div class="card metric"><div class="value">65-70%</div><div class="label">Доля К+ на рынке СПС (эксп. оценка)</div></div>
 <div class="card metric"><div class="value">389K</div><div class="label">МСП в Петербурге</div></div>
 </div>
+<p style="font-size:12px;color:var(--muted);margin-top:8px">* «LegalTech 15 млрд» — широкая оценка всего рынка правовых технологий (СПС + AI-инструменты + стартапы + автоматизация). Источник: <a href="https://companies.rbc.ru/news/wTDoPFmArS/">РБК Компании, 22.12.2025</a>. Не является аудированным исследованием. Рынок именно СПС (КонсультантПлюс + ГАРАНТ + Кодекс) — порядка 10 млрд руб.</p>
 
 <!-- SVG: Donut Chart - Market Share -->
 <div class="chart-container compact">
@@ -200,17 +201,19 @@ footer{padding:40px 0;text-align:center;color:var(--muted);font-size:13px}
 </div>
 
 <h3>Конкурентная матрица</h3>
+<div class="alert" style="background:rgba(74,143,224,.08);border-color:rgba(74,143,224,.2);margin-bottom:12px"><b style="color:var(--blue)">Важно:</b> ЧДК-ПРАВО и Аскон — <b>региональные дистрибьюторы К+ в СПб</b>. Кодекс — <b>вся компания по РФ</b> (штаб-квартира в СПб). Сравнение выручки напрямую некорректно. Группа К+ по всей РФ = ~5.5 млрд, что в 2.7× больше Кодекса.</div>
 <div style="overflow-x:auto">
 <table>
-<tr><th>Компания</th><th>Система</th><th>Выручка 2024</th><th>Прибыль</th><th>Маржа</th><th>Госконтракты</th><th>Сотрудники</th></tr>
-<tr style="background:rgba(201,164,76,.05)"><td><b>ЧДК-ПРАВО</b></td><td>К+</td><td>417.7 млн</td><td>54.3 млн</td><td><span class="tag green">13.0%</span></td><td>~990 шт / 727 млн</td><td>98</td></tr>
-<tr><td>ИПЦ «Консультант+Аскон»</td><td>К+</td><td>698.1 млн</td><td>71.6 млн</td><td>10.3%</td><td>776 шт</td><td>—</td></tr>
-<tr><td>АО «Кодекс»</td><td>Кодекс/Техэксперт</td><td>~2 000 млн</td><td>164.9 млн</td><td>8.1%</td><td>174 шт / 2 553 млн</td><td>249</td></tr>
-<tr><td>СЗРЦ «Гарант Интернэшнл»</td><td>ГАРАНТ</td><td>54.7 млн</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-<tr><td>КомпасЛидера</td><td>К+</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-<tr><td>Ваше Право КП</td><td>К+</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><th>Компания</th><th>Масштаб</th><th>Система</th><th>Выручка 2024</th><th>Прибыль</th><th>Маржа</th><th>Госконтракты</th><th>Сотрудники</th></tr>
+<tr style="background:rgba(201,164,76,.05)"><td><b>ЧДК-ПРАВО</b></td><td><span class="tag blue">РИЦ СПб</span></td><td>К+</td><td>417.7 млн</td><td>54.3 млн</td><td><span class="tag green">13.0%</span></td><td>~990 шт / 727 млн</td><td>98</td></tr>
+<tr><td>ИПЦ «Консультант+Аскон»</td><td><span class="tag blue">РИЦ СПб</span></td><td>К+</td><td>698.1 млн</td><td>71.6 млн</td><td>10.3%</td><td>776 шт</td><td>175</td></tr>
+<tr><td>АО «Кодекс»</td><td><span class="tag red">Вся РФ</span></td><td>Кодекс/Техэксперт</td><td>~2 000 млн</td><td>164.9 млн</td><td>8.1%</td><td>174 шт / 2 553 млн</td><td>249</td></tr>
+<tr><td>СЗРЦ «Гарант Интернэшнл»</td><td><span class="tag blue">СЗФО</span></td><td>ГАРАНТ</td><td>54.7 млн</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>КомпасЛидера</td><td><span class="tag blue">РИЦ СПб</span></td><td>К+</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Ваше Право КП</td><td><span class="tag blue">РИЦ СПб</span></td><td>К+</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
 </table>
 </div>
+<p style="font-size:12px;color:var(--muted);margin-top:8px"><b>ИПЦ «Консультант+Аскон»</b> (ИНН 7839392506) — второй крупнейший РИЦ КонсультантПлюс в СПб. Владелец: Голикова И.А. (97%). Работает под общим брендом К+, поэтому на рынке не «виден» как отдельная марка. Прямой конкурент ЧДК-ПРАВО за тех же клиентов в том же городе.</p>
 
 <h3>Digital-аудит: сравнение</h3>
 <div style="overflow-x:auto">
